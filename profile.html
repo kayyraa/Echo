@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Profile</title>
+
+        <script type="module" src="./scripts/profile.js"></script>
+        <script type="module" src="./scripts/api.js"></script>
+
+        <link rel="shortcut icon" href="./images/Favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="./scripts/style/profile.css">
+        <link rel="stylesheet" href="./scripts/style/format.css">
+        <link rel="stylesheet" href="./scripts/style/fonts.css">
+
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/9.12.0/firebase-storage.js"></script>
+    </head>
+    <body>
+        <div class="Topbar">
+            <header>Profile</header>
+            <vr></vr>
+            <header onclick="location.reload()" id="UsernameLabel">Loading</header>
+            <button onclick="location.href = './index.html'">Back</button>
+        </div>
+
+        <div class="Profile">
+            <section>
+                <header>Profile Photo</header>
+                <div>
+                    <img id="ProfilePhotoLabel" autocomplete="off" src="./images/DefaultUser.svg">
+                    <input id="ProfilePhotoUrlInput" autocomplete="off" placeholder="https://example.com/image.png" type="text">
+                    <input id="ProfilePhotoFileInput" type="file" accept="image/*">
+                    <button id="ProfilePhotoSaveButton">Save Changes</button>
+                </div>
+            </section>
+            <section>
+                <header>About Me</header>
+                <div>
+                    <span id="ProfileAboutMeLabel"></span>
+                    <input id="ProfileAboutMeInput" autocomplete="off" placeholder="About me..." type="text">
+                    <button id="ProfileAboutMeSaveButton">Save Changes</button>
+                </div>
+            </section>
+            <section>
+                <header>Rich Presence</header>
+                <div>
+                    <rich>
+                        <input id="ProfileRichPresenceTitleInput" placeholder="Title" type="text">
+                        <select>
+                            <option selected value="online">Online</option>
+                            <option value="offline">Offline</option>
+                            <option value="away">Away</option>
+                        </select>
+                    </rich>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
