@@ -1,0 +1,478 @@
+@import url("./fonts.css");
+
+body {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    font-family: "EchoFont";
+    overflow: hidden;
+}
+
+header {
+    font-size: 6vh;
+    font-weight: 700;
+}
+
+input {
+    border: none;
+    outline: none;
+    text-align: center;
+    font-family: "EchoFont";
+    font-weight: 500;
+    font-size: 4vh;
+}
+
+button {
+    text-align: center;
+    font-family: "EchoFont";
+    font-weight: 600;
+    font-size: 4vh;
+    border: none;
+    cursor: pointer;
+
+    border-radius: 100em;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+button:hover {
+    opacity: 0.75;
+}
+
+.Conversations {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+
+    z-index: -1;
+
+    position: fixed;
+    left: 0;
+    top: 4vh;
+    height: 125%;
+    width: 25%;
+
+    background-color: rgb(30, 30, 30);
+
+    align-items: center;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    transition: all 0.25s ease;
+}
+
+.Conversations > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+
+    width: 100%;
+    height: 4vh;
+
+    background-color: rgba(255, 255, 255, 0.125);
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.Conversations > div > .Blank {
+    border-radius: 100em;
+}
+
+.Conversations > div > .BlankA {
+    background-color: rgba(255, 255, 255, 0.125);
+    height: 75%;
+    width: 12vw;
+}
+
+.Conversations > div > .BlankB {
+    background-color: rgba(255, 255, 255, 0.125);
+    height: 75%;
+    width: 4vw;
+}
+
+.Conversations > div > .BlankC {
+    background-color: rgba(255, 255, 255, 0.125);
+    height: 75%;
+    width: 16vw;
+}
+
+.Conversations > div > .BlankD {
+    background-color: rgba(255, 255, 255, 0.125);
+    height: 75%;
+    width: 8vw;
+}
+
+.Conversations > div > span {
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    font-size: 2vh;
+}
+
+.Conversations > div img.RemoveButton {
+    position: absolute;
+}
+
+.Conversations > div:not([disabled]):hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.Conversations img {
+    aspect-ratio: 1 / 1;
+}
+
+.Conversations > div[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.CoverImageContainer {
+    position: relative;
+    height: 100%;
+}
+
+.CoverImageContainer img:not(:first-of-type) {
+    position: absolute;
+    left: 0;
+    height: 85%;
+}
+
+.CoverImageContainer img:first-of-type {
+    border-radius: 100%;
+    border: 2px solid white;
+    height: 75%;
+}
+
+.Conversations > div > img:first-of-type {
+    border-radius: 100%;
+    border: 2px solid white;
+    height: 75%;
+}
+
+.Conversations > div > img:not(:first-of-type) {
+    border: 2px solid white;
+    margin-left: auto;
+    opacity: 0.75;
+    border-radius: 100%;
+    height: 75%;
+}
+
+.Conversations > div > img:not(:first-of-type):hover {
+    opacity: 1;
+}
+
+.Messages {
+    display: flex;
+    flex-direction: column;
+
+    z-index: 0;
+
+    position: absolute;
+    left: 62.5%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+
+    margin-top: 14vh;
+    padding-bottom: 24vh;
+
+    width: 75%;
+    height: 100%;
+
+    background-color: rgb(50, 50, 50);
+
+    overflow: hidden;
+}
+
+.AbsoluteMessages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 4.5vh;
+
+    width: 100%;
+    height: 70%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.AbsoluteMessages > p {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    font-size: 2vh;
+    font-weight: 700;
+}
+
+.AbsoluteMessages video {
+    max-width: 97.5%;
+}
+
+.AbsoluteMessages div.Pure {
+    width: 7;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 1vw;
+    font-size: 2vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.AbsoluteMessages > div.Pure > img {
+    border-radius: 12px;
+    order: 100;
+}
+
+.AbsoluteMessages div.Pure > div:not(.UserProfileContainer) {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.AbsoluteMessages > div.Pure[client] {
+    background-color: rgba(0, 123, 255, 0.125);
+}
+
+.AbsoluteMessages > div.Pure:not([client]) {
+    background-color: rgba(255, 0, 0, 0.125);
+}
+
+.UserProfileContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.UserProfileContainer > span {
+    font-weight: 700;
+}
+
+.UserProfileContainer > img {
+    border-radius: 100em;
+    border: 2px solid white;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+.UserProfileContainer > img {
+    height: 4vh;
+    aspect-ratio: 1 / 1;
+}
+
+.Buttons {
+    position: absolute;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+
+    background-color: rgb(40, 40, 40);
+
+    height: 5vh;
+    
+    transition: all 0.25s ease;
+}
+
+.Buttons > div {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+
+    height: 75%;
+    transition: all 0.25s ease;
+}
+
+.Buttons > div > img {
+    height: 100%;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.Buttons > div > span {
+    position: absolute;
+    bottom: -6vh;
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-wrap: nowrap;
+
+    background-color: rgb(20, 20, 20);
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    
+    font-weight: 700;
+
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.Buttons > div:first-of-type > span {
+    left: -100%;
+    transform: translateX(-50%);
+    
+    border-top-left-radius: 100em;
+    border-bottom-left-radius: 100em;
+}
+
+.Buttons > div:last-of-type > span {
+    left: 100%;
+    transform: translateX(-15%);
+
+    border-top-right-radius: 100em;
+    border-bottom-right-radius: 100em;
+}
+
+.Buttons > div:hover {
+    filter: brightness(1.25);
+}
+
+.Buttons > div:hover span {
+    opacity: 1;
+}
+
+.MessageInput {
+    position: absolute;
+    text-align: left;
+    padding-left: 1vw;
+
+    bottom: 22.5%;
+    width: 99%;
+    height: 5vh;
+
+    background-color: rgb(60, 60, 60);
+    color: white;
+    outline: none;
+    
+    font-size: 1.5vh;
+
+    overflow: hidden;
+
+    transition: all 0.25s ease;
+}
+
+.Account {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 60%;
+    height: 50%;
+    background-color: white;
+    border-radius: 2vh;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+.Account > span {
+    color: black;
+    font-size: 4vh;
+    font-weight: 700;
+}
+
+.Account > input, .Account > button {
+    height: 100%;
+}
+
+.Account > input:hover, .Account > button:hover {
+    background-color: rgba(0, 0, 0, 0.125);
+}
+
+.ImagePrompt {
+    font-family: "EchoFont";
+
+    position: absolute;
+    top: 4vh;
+
+    width: 100%;
+    margin: 0;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.25);
+
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+
+    visibility: hidden;
+
+    overflow: hidden;
+}
+
+.ImagePrompt > * {
+    font-size: 2vh;
+    width: 48vw;
+}
+
+.ImagePrompt > input {
+    font-family: "EchoFont";
+    border-radius: 100em;
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+#AddConversationButton > img {
+    position: absolute;
+    left: 0;
+}
+
+#AddConversationButton > span {
+    margin-left: 2.125vw;
+}
+
+@media screen and (max-width: 768px) {
+    .Messages {
+        left: 53%;
+        width: 93.75%;
+    }
+
+    .Buttons > div > span {
+        display: none;
+    }
+
+    .Buttons {
+        gap: 5vw;
+    }
+
+    .Conversations > div > span {
+        color: transparent;
+    }
+
+    .Conversations {
+        width: 6.125vw;
+        height: 100%;
+    }
+
+    .AbsoluteMessages video {
+        max-width: 95%;
+    }
+}
